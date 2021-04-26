@@ -1,0 +1,52 @@
+.cardWrapper {
+    position: relative;
+    margin: auto;
+    perspective: 1000px;
+  }
+  
+  .card {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    transform-style: preserve-3d;
+    transition: 1s;
+    user-select: none;
+  }
+  
+  .back {
+    background:  rgb(30, 33, 34);
+  }
+  
+  .flipped {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+  }
+  
+  .front {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+  }
+  
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .cardFlipped {
+    composes: flipped card;
+  }
